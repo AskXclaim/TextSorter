@@ -19,13 +19,17 @@ public class TextSorterTests
     }
 
     [Theory]
-    [InlineData("Happy ahappy   AHappy", "ahappy AHappy Happy")]
-    [InlineData("Happy ahappy AHappy", "ahappy AHappy Happy")]
-    [InlineData("Happy AHappy ahappy ", "ahappy AHappy Happy")]
     [InlineData("Zebra   Abba", "Abba Zebra")]
     [InlineData("Abba Zebra", "Abba Zebra")]
     [InlineData("aBba Abba", "aBba Abba")]
     [InlineData("Abba aBba", "aBba Abba")]
+    [InlineData("Zebra,. Abba", "Abba Zebra")]
+    [InlineData("Abba'Zebra", "Abba Zebra")]
+    [InlineData("aBba`Abba", "aBba Abba")]
+    [InlineData("Abba;aBba", "aBba Abba")]
+    [InlineData("Happy ahappy   AHappy", "ahappy AHappy Happy")]
+    [InlineData("Happy ahappy AHappy", "ahappy AHappy Happy")]
+    [InlineData("Happy AHappy ahappy ", "ahappy AHappy Happy")]
     public void Sort_WhenCalledWithValidContent_ReturnsExpectedResult
         (string paragraph, string expectedResult)
     {
