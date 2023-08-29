@@ -1,4 +1,4 @@
-### TextSorter
+# TextSorter
 ## User Story
     as a text analyser
     - I want to reorder and reformat a paragraph of text as follows:
