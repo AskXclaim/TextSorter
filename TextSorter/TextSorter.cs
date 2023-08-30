@@ -3,10 +3,10 @@ namespace TextSorter;
 public class TextSorter : ITextSorter
 {
     private readonly ITextSorterLogger _logger;
-    public TextSorter(ITextSorterLogger logger)
-    {
-        _logger = logger;
-    }
+
+    public TextSorter(ITextSorterLogger? logger) =>
+        _logger = logger ?? new TextSorterConsoleLogger();
+
 
     /// <summary>
     /// A method to sort texts using the following rules
@@ -41,7 +41,6 @@ public class TextSorter : ITextSorter
             _logger.Log(exception.Message);
             throw;
         }
-     
     }
 
     private string[] SortWords(string paragraph)
